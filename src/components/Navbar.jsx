@@ -8,6 +8,7 @@ function Navbar() {
 
     return (
         <nav>
+            <div className="nav-links">
             <Link to="/">
                 <button>Home</button>
             </Link>
@@ -21,13 +22,18 @@ function Navbar() {
                         <button>Destinations</button>
                     </Link>
 
-                    <button onClick={logOutUser}>Logout</button>
-                    <span>{user && user.name}</span>
                 </>
             )}
+            </div>
+            <div>
+
+                <button onClick={logOutUser}>Logout</button>
+                <span className="username">{user && user.name}</span>
+            </div>
+
 
             {!isLoggedIn && (
-                <>
+                <div>
                     <Link to="/signup">
                         {" "}
                         <button>Sign Up</button>{" "}
@@ -36,7 +42,7 @@ function Navbar() {
                         {" "}
                         <button>Login</button>{" "}
                     </Link>
-                </>
+             </div>
             )}
         </nav>
     );

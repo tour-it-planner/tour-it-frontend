@@ -7,30 +7,43 @@ import itinerariesService from "../services/itineraries.service";
 const API_URL = "http://localhost:5005";
 
 function ItineraryListPage() {
-
     const [itineraries, setItineraries] = useState([]);
+    const [showForm, setShowForm] = useState(false); 
 
     const getAllItineraries = () => {
-
         itinerariesService
-        .getAllItineraries()
-        .then((response) => setItineraries(response.data))
-        .catch((error) => console.log(error));
+            .getAllItineraries()
+            .then((response) => setItineraries(response.data))
+            .catch((error) => console.log(error));
     };
 
     useEffect(() => {
-        getAllItineraries();
-    }, []);
+        if (!showForm) {
+            getAllItineraries();
+        }
+    }, [showForm]);
+
+    const toggleFormVisibility = () => {
+        setShowForm(!showForm);
+    };
 
     return (
         <div className="ItineraryListPage">
-            <AddItinerary refreshItineraries={getAllItineraries} />
-            {itineraries.map((itinerary) => {
-               return <ItineraryCard key={itinerary._id} {...itinerary} />
-            })}
+            <button onClick={toggleFormVisibility} className="toggle-form-button">
+                {showForm ? 'Cancel' : 'Add Itinerary'}
+            </button>
+            
+            {showForm ? (
+                <AddItinerary refreshItineraries={getAllItineraries} />
+            ) : (
+                <div className="itinerary-cards">
+                    {itineraries.map((itinerary) => (
+                        <ItineraryCard key={itinerary._id} {...itinerary} />
+                    ))}
+                </div>
+            )}
         </div>
-    )
-
+    );
 }
 
 export default ItineraryListPage;
