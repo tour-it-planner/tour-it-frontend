@@ -1,5 +1,5 @@
-import './App.css';
-import { Routes, Route } from "react-router-dom"
+import './index.css';
+import { Routes, Route } from "react-router-dom";
 import HomePage from './pages/Homepage';
 import ItineraryListPage from './pages/ItineraryListPage';
 import ItineraryDetailsPage from './pages/ItineraryDetailsPage';
