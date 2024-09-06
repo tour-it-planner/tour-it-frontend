@@ -1,13 +1,34 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import itinerariesService from "../services/itineraries.service";
+import destinationsService from "../services/destinations.service";
+import React from "react";
+import Select from 'react-select'
 
 
     function AddItinerary(props) {
       const [title, setTitle] = useState("");
       const [description, setDescription] = useState("");
       const [destination, setDestination] = useState("");
+      const [options, setOptions] = useState([]);
+
+      useEffect(() => {
+        const fetchDestinations = () => {
+          destinationsService.getAllDestinations()
+            .then((response) => {
+              
+              const formattedOptions = response.data.map((destination) => ({
+                value: destination._id, 
+                label: destination.location,
+              }));
+              setOptions(formattedOptions);
+            })
+            .catch((error) => console.log("Error getting destination options", error));
+        };
     
-    
+        fetchDestinations();
+      }, []);
+
+
       const handleSubmit = (e) => {
         e.preventDefault();
         const requestBody = { title, description, destination };
@@ -52,13 +73,13 @@ import itinerariesService from "../services/itineraries.service";
             />
 
             <label>Destination:</label>
-            <input
+            <Select
               type="text"
               name="destination"
-              placeholder="Enter Destination"
+              placeholder="Select Destination"
               required
-              value={destination}
-              onChange={(e) => setDestination(e.target.value)}
+              options={options}
+              onChange={(selectedOption) => setDestination(selectedOption.value)}
             />
     
             <button type="submit">Submit</button>
