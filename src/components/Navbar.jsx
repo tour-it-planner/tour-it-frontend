@@ -9,40 +9,36 @@ function Navbar() {
     return (
         <nav>
             <div className="nav-links">
-            <Link to="/">
-                <button>Home</button>
-            </Link>
+                <Link to="/">
+                    <button>Home</button>
+                </Link>
 
-            {isLoggedIn && (
-                <>
-                    <Link to="/itineraries">
-                        <button>Itineraries</button>
-                    </Link>
-                    <Link to="/destinations">
-                        <button>Destinations</button>
-                    </Link>
+                {isLoggedIn && (
+                    <>
+                        <Link to="/itineraries">
+                            <button>Itineraries</button>
+                        </Link>
+                        <Link to="/destinations">
+                            <button>Destinations</button>
+                        </Link>
 
-                </>
-            )}
+                    </>
+                )}
             </div>
-            <div>
-
-                <button onClick={logOutUser}>Logout</button>
-                <span className="username">{user && user.name}</span>
-            </div>
-
-
-            {!isLoggedIn && (
+            {isLoggedIn ? (
+                <div>
+                    <button onClick={logOutUser}>Logout</button>
+                    <span className="username">{user && user.name}</span>
+                </div>
+            ) : (
                 <div>
                     <Link to="/signup">
-                        {" "}
-                        <button>Sign Up</button>{" "}
+                        <button>Sign Up</button>
                     </Link>
                     <Link to="/login">
-                        {" "}
-                        <button>Login</button>{" "}
+                        <button>Login</button>
                     </Link>
-             </div>
+                </div>
             )}
         </nav>
     );
