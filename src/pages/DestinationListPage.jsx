@@ -9,6 +9,7 @@ const API_URL = "http://localhost:5005";
 function DestinationListPage() {
 
     const [destinations, setDestinations] = useState([]);
+    const [showForm, setShowForm] = useState(false); 
 
     const getAllDestinations = () => {
         
@@ -22,15 +23,32 @@ function DestinationListPage() {
         getAllDestinations();
     }, []);
 
-    return (
-        <div className="DestinationsListPage">
-            <AddDestination refreshDestinations={getAllDestinations} />
-            {destinations.map((destination) => {
-                return <DestinationCard key={destination._id} {...destination} />
-            })}
-        </div>
-    )
+    const toggleFormVisibility = () => {
+        setShowForm(!showForm);
+    };
 
+    const handleNewDestination = (newDestination) => {
+        setDestinations((prevDestinations) => [newDestination, ...prevDestinations]);
+        setShowForm(false); 
+    };
+
+    return (
+        <div className="DestinationListPage">
+            <button onClick={toggleFormVisibility} className="toggle-form-button">
+                {showForm ? 'Cancel' : 'Add Destination'}
+            </button>
+            
+            {showForm ? (
+                <AddDestination refreshDestinations={handleNewDestination} />
+            ) : (
+                <div className="destination-cards">
+                    {destinations.slice().reverse().map((destination) => (
+                        <DestinationCard key={destination._id} {...destination} />
+                    ))}
+                </div>
+            )}
+        </div>
+    );
 }
 
 export default DestinationListPage;

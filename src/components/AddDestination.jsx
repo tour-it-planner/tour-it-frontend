@@ -18,7 +18,7 @@ function AddDestination(props) {
         setLocation("");
         setDescription("");
         setImageUrl("");
-        props.refreshDestinations();
+        props.refreshDestinations(response.data);
       })
       .catch((error) => console.log(error));
   };

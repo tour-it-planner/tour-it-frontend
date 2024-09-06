@@ -16,11 +16,11 @@ import itinerariesService from "../services/itineraries.service";
     
         itinerariesService.createItinerary(requestBody)
           .then((response) => {
-            console.log("Response: ", response);
+            
             setTitle("");
             setDescription("");
             setDestination("");
-            props.refreshItineraries();
+            props.refreshItineraries(response.data);
           })
           .catch((error) => console.log(error));
       };

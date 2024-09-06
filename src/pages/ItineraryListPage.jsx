@@ -18,13 +18,17 @@ function ItineraryListPage() {
     };
 
     useEffect(() => {
-        if (!showForm) {
-            getAllItineraries();
-        }
-    }, [showForm]);
+        getAllItineraries();
+    }, []);
+
 
     const toggleFormVisibility = () => {
         setShowForm(!showForm);
+    };
+
+    const handleNewItinerary = (newItinerary) => {
+        setItineraries((prevItineraries) => [newItinerary, ...prevItineraries]);
+        setShowForm(false); 
     };
 
     return (
@@ -34,10 +38,10 @@ function ItineraryListPage() {
             </button>
             
             {showForm ? (
-                <AddItinerary refreshItineraries={getAllItineraries} />
+                <AddItinerary refreshItineraries={handleNewItinerary} />
             ) : (
                 <div className="itinerary-cards">
-                    {itineraries.map((itinerary) => (
+                    {itineraries.slice().reverse().map((itinerary) => (
                         <ItineraryCard key={itinerary._id} {...itinerary} />
                     ))}
                 </div>
