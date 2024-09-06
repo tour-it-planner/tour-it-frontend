@@ -41,7 +41,7 @@ function ItineraryListPage() {
                 <AddItinerary refreshItineraries={handleNewItinerary} />
             ) : (
                 <div className="itinerary-cards">
-                    {itineraries.slice().reverse().map((itinerary) => (
+                    {itineraries.map((itinerary) => (
                         <ItineraryCard key={itinerary._id} {...itinerary} />
                     ))}
                 </div>
