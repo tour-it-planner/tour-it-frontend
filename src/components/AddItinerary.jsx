@@ -8,14 +8,14 @@ import Select from 'react-select'
     function AddItinerary(props) {
       const [title, setTitle] = useState("");
       const [description, setDescription] = useState("");
-      const [destination, setDestination] = useState("");
+      const [destination, setDestination] = useState([]);
       const [options, setOptions] = useState([]);
 
       useEffect(() => {
         const fetchDestinations = () => {
           destinationsService.getAllDestinations()
             .then((response) => {
-              
+              console.log("Fetched Destinations: ", response.data);
               const formattedOptions = response.data.map((destination) => ({
                 value: destination._id, 
                 label: destination.location,
@@ -31,16 +31,19 @@ import Select from 'react-select'
 
       const handleSubmit = (e) => {
         e.preventDefault();
-        const requestBody = { title, description, destination };
+        console.log("Selected Destinations before submitting: ", destination);
+        const selectedDestinations = destination.map((dest) => dest.value);
+        const requestBody = { title, description, destinations: selectedDestinations };
     
         console.log("Submitting: ", requestBody);
+        console.log("Submitting: ", requestBody); 
     
         itinerariesService.createItinerary(requestBody)
           .then((response) => {
             
             setTitle("");
             setDescription("");
-            setDestination("");
+            setDestination([]);
             props.refreshItineraries(response.data);
           })
           .catch((error) => console.log(error));
@@ -74,12 +77,17 @@ import Select from 'react-select'
 
             <label>Destination:</label>
             <Select
+              isMulti
               type="text"
               name="destination"
-              placeholder="Select Destination"
+              placeholder="Select Destination(s)"
               required
               options={options}
-              onChange={(selectedOption) => setDestination(selectedOption.value)}
+              value={destination}
+              onChange={(selectedOptions) => {
+                console.log("Selected Options: ", selectedOptions);  
+                setDestination(selectedOptions ? selectedOptions : []);  
+              }}
             />
     
             <button type="submit">Submit</button>
