@@ -1,9 +1,10 @@
 import './index.css';
 import { Routes, Route } from "react-router-dom";
-import HomePage from './pages/Homepage';
+import HomePage from './pages/HomePage';
 import ItineraryListPage from './pages/ItineraryListPage';
 import ItineraryDetailsPage from './pages/ItineraryDetailsPage';
 import DestinationListPage from './pages/DestinationListPage';
+import DestinationDetailsPage from './pages/DestinationDetailsPage';
 import UpdateItineraryPage from './pages/UpdateItineraryPage';
 import Navbar from './components/Navbar';
 import SignupPage from './pages/SignupPage';
@@ -29,6 +30,10 @@ function App() {
         <Route
           path="/destinations"
           element={  <DestinationListPage />  } 
+        />
+        <Route
+          path="/destinations/:destinationId"
+          element={ <DestinationDetailsPage /> }
         />
 
         <Route
