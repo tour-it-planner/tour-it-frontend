@@ -4,8 +4,6 @@ import AddDestination from "../components/AddDestination";
 import { useState, useEffect } from "react";
 
 
-const API_URL = "http://localhost:5005";
-
 function DestinationListPage() {
 
     const [destinations, setDestinations] = useState([]);

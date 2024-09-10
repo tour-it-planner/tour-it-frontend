@@ -4,7 +4,6 @@ import AddItinerary from "../components/AddItinerary";
 import ItineraryCard from "../components/ItineraryCard";
 import itinerariesService from "../services/itineraries.service";
 
-const API_URL = "http://localhost:5005";
 
 function ItineraryListPage() {
     const [itineraries, setItineraries] = useState([]);
