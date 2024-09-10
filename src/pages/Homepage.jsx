@@ -48,11 +48,6 @@ function HomePage() {
           <img src="https://images.pexels.com/photos/2527556/pexels-photo-2527556.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Forest" />
         </div>
       </section>
-
-      
-      <footer className="footer">
-        <p>&copy; 2024 Travel Planner | <Link to="/about">About Us</Link> | <Link to="/contact">Contact Us</Link></p>
-      </footer>
     </div>
   );
 }
