@@ -10,6 +10,8 @@ import Navbar from './components/Navbar';
 import SignupPage from './pages/SignupPage';
 import LoginPage from './pages/LoginPage';
 import Footer from './components/Footer';
+import IsPrivate from './components/IsPrivate';
+import IsAnon from './components/isAnon';
 
 function App() {
 
@@ -21,19 +23,19 @@ function App() {
       <Routes>
         <Route path="/itineraries" element={<ItineraryListPage />} />
 
-        <Route path="/itineraries/:itineraryId" element={ <ItineraryDetailsPage /> } />
+        <Route path="/itineraries/:itineraryId" element={ <IsPrivate> <ItineraryDetailsPage /> </IsPrivate>} />
 
-        <Route path="/destinations" element={<DestinationListPage />} />
+        <Route path="/destinations" element={<IsPrivate> <DestinationListPage /> </IsPrivate>} />
 
-        <Route path="/destinations/:destinationId" element={<DestinationDetailsPage />} />
+        <Route path="/destinations/:destinationId" element={ <IsPrivate> <DestinationDetailsPage /> </IsPrivate> } />
 
-        <Route path="/itineraries/edit/:itineraryId" element={<UpdateItineraryPage />} />
+        <Route path="/itineraries/edit/:itineraryId" element={ <IsPrivate> <UpdateItineraryPage /> </IsPrivate>} />
 
         <Route exact path="/" element={<HomePage />} />
 
-        <Route path="/signup" element={<SignupPage />} />
+        <Route path="/signup" element={<IsAnon><SignupPage /></IsAnon>} />
 
-        <Route path="/login" element={<LoginPage />} />
+        <Route path="/login" element={<IsAnon><LoginPage /></IsAnon>} />
 
       </Routes>
       <Footer />
