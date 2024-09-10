@@ -1,13 +1,14 @@
-import axios from "axios";
-import { useState, useEffect } from "react";
+import { useState, useEffect , useContext} from "react";
 import AddItinerary from "../components/AddItinerary";
 import ItineraryCard from "../components/ItineraryCard";
 import itinerariesService from "../services/itineraries.service";
+import { AuthContext } from "../context/auth.context";
 
 
 function ItineraryListPage() {
     const [itineraries, setItineraries] = useState([]);
     const [showForm, setShowForm] = useState(false); 
+    const { isLoggedIn } = useContext(AuthContext); 
 
     const getAllItineraries = () => {
         itinerariesService
@@ -32,9 +33,11 @@ function ItineraryListPage() {
 
     return (
         <div className="ItineraryListPage">
-            <button onClick={toggleFormVisibility} className="toggle-form-button">
-                {showForm ? 'Cancel' : 'Add Itinerary'}
-            </button>
+           {isLoggedIn && (
+                <button onClick={toggleFormVisibility} className="toggle-form-button">
+                    {showForm ? 'Cancel' : 'Add Itinerary'}
+                </button>
+            )}
             
             {showForm ? (
                 <AddItinerary refreshItineraries={handleNewItinerary} />
