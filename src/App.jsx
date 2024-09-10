@@ -1,12 +1,11 @@
 import './index.css';
 import { Routes, Route } from "react-router-dom";
-import HomePage from '/src/pages/HomePage.jsx';
+import HomePage from './pages/Homepage';
 import ItineraryListPage from './pages/ItineraryListPage';
 import ItineraryDetailsPage from './pages/ItineraryDetailsPage';
 import DestinationListPage from './pages/DestinationListPage';
 import DestinationDetailsPage from './pages/DestinationDetailsPage';
 import UpdateItineraryPage from './pages/UpdateItineraryPage';
-import IsPrivate from './components/isPrivate';
 import Navbar from './components/Navbar';
 import SignupPage from './pages/SignupPage';
 import LoginPage from './pages/LoginPage';
