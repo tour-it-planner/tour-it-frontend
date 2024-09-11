@@ -1,4 +1,5 @@
 import './index.css';
+import './HomePage.css';
 import { Routes, Route } from "react-router-dom";
 import HomePage from './pages/Homepage';
 import ItineraryListPage from './pages/ItineraryListPage';
@@ -12,6 +13,7 @@ import LoginPage from './pages/LoginPage';
 import Footer from './components/Footer';
 import IsPrivate from './components/IsPrivate';
 import IsAnon from './components/isAnon';
+import NotFoundPage from './pages/NotFoundPage';
 
 function App() {
 
@@ -36,6 +38,8 @@ function App() {
         <Route path="/signup" element={<IsAnon><SignupPage /></IsAnon>} />
 
         <Route path="/login" element={<IsAnon><LoginPage /></IsAnon>} />
+
+        <Route path="*" element={<NotFoundPage />} />
 
       </Routes>
       <Footer />
