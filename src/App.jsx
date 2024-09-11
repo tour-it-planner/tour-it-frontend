@@ -13,8 +13,7 @@ import LoginPage from './pages/LoginPage';
 import Footer from './components/Footer';
 import NotFoundPage from './pages/NotFoundPage';
 import IsPrivate from './components/IsPrivate';
-import IsAnon from './components/isAnon';
-
+import IsAnon from '/src/components/IsAnon.jsx';
 
 function App() {
 
