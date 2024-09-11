@@ -29,8 +29,9 @@ function DestinationDetailsPage(){
         {destination ? ( 
             <>
                 <h2>{destination.location}</h2>
-                <p>{destination.description}</p>
+                
                 <img src={destination.imageUrl} alt={destination.location} />
+                <p>{destination.description}</p>
                 <div className="itineraries">
                     <h3>Associated Itineraries:</h3>
                     {destination.itineraries && destination.itineraries.length > 0 ? (
