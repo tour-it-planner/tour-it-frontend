@@ -1,25 +1,62 @@
-/* HomePage.css */
-
 .home-page {
-  font-family: Arial, sans-serif;
+  animation: fadeIn 1.0s ease-in-out;
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 50;
+  font-style: normal;
+}
+  
+
+/* Animation for entire page */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
+/* Hero Section with Parallax Effect */
 .hero-section {
-  background-image: url('https://images.pexels.com/photos/951539/pexels-photo-951539.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'); /* Replace with a great travel-related image */
+  background-image: url('https://images.pexels.com/photos/951539/pexels-photo-951539.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
   background-size: cover;
   background-position: center;
   height: 90vh;
   position: relative;
+  animation: slideIn 2s ease-in-out;
 }
 
+@keyframes slideIn {
+  from {
+    background-position: top;
+  }
+  to {
+    background-position: center;
+  }
+}
+
+/* Hero Overlay */
 .hero-overlay {
-  background: rgba(0, 0, 0, 0.6); /* Dark overlay */
+  background: rgba(0, 0, 0, 0.6); 
   color: white;
   height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  animation: textFade 2s ease-in-out;
+}
+
+@keyframes textFade {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .hero-title {
@@ -32,23 +69,38 @@
   margin-bottom: 20px;
 }
 
+/* Animated CTA Button */
 .cta-button {
-  background-color: #ff6347; /* Tomato color */
+  background-color: #ff6347;
   color: white;
   border: none;
   padding: 15px 30px;
   font-size: 1.2rem;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  border-radius: 5px;
 }
 
 .cta-button:hover {
-  background-color: #ff4500; /* Darker shade */
+  background-color: #ff4500;
+  transform: scale(1.05); /* Slightly enlarge button */
 }
 
 .highlights-section {
   padding: 50px 20px;
   text-align: center;
+  animation: fadeInUp 1s ease-in-out;
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .highlights-section h2 {
@@ -56,6 +108,7 @@
   font-size: 2rem;
 }
 
+/* Highlight Cards with Hover Effects */
 .highlights {
   display: flex;
   justify-content: space-around;
@@ -65,6 +118,12 @@
 .highlight-card {
   width: 30%;
   margin-bottom: 20px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.highlight-card:hover {
+  transform: scale(1.05); /* Enlarge on hover */
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2); /* Add shadow */
 }
 
 .highlight-card img {
@@ -72,12 +131,19 @@
   height: 200px;
   object-fit: cover;
   border-radius: 10px;
+  transition: opacity 0.3s ease;
 }
 
+.highlight-card:hover img {
+  opacity: 0.9; /* Slightly dim image on hover */
+}
+
+/* Inspiration Section */
 .inspiration-section {
   padding: 50px 20px;
   background-color: #f7f7f7;
   text-align: center;
+  animation: fadeInUp 1.2s ease-in-out;
 }
 
 .inspiration-section h2 {
@@ -97,21 +163,31 @@
   margin: 10px;
   object-fit: cover;
   border-radius: 10px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
+.inspiration-images img:hover {
+  transform: scale(1.05);
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Footer with Hover Effects */
 .footer {
   background-color: #333;
   color: white;
   text-align: center;
   padding: 20px;
   margin-top: 50px;
+  animation: fadeIn 1.2s ease-in-out;
 }
 
 .footer a {
   color: #ff6347;
   text-decoration: none;
+  transition: color 0.3s ease;
 }
 
 .footer a:hover {
   text-decoration: underline;
+  color: #ff4500;
 }

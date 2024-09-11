@@ -1,18 +1,15 @@
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  color: rgba(27, 15, 15, 0.87);
+  background-color: #ffffff;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-
 a {
   font-weight: 500;
   color: #646cff;
@@ -26,6 +23,9 @@ body {
   margin: 0;
   display: flex;
   place-items: center;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
   min-width: 320px;
   min-height: 100vh;
 }
@@ -41,8 +41,7 @@ button {
   padding: 0.6em 1.2em;
   font-size: 1em;
   font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
+  background-color: #9c9494;
   cursor: pointer;
   transition: border-color 0.25s;
 }
@@ -54,15 +53,489 @@ button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #333;
+  color: white;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Navbar links */
+.nav-links {
+  display: flex;
+  gap: 20px;
+}
+
+.nav-links a {
+  text-decoration: none;
+}
+
+.nav-links button {
+  background-color: transparent;
+  border: none;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+/* Hover animation for buttons */
+.nav-links button:hover {
+  background-color: #555;
+  transform: scale(1.1);
+}
+
+/* Auth links (Login/Sign Up/Logout) */
+nav div:last-child {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+nav div button {
+  background-color: #555;
+  border: none;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  padding: 10px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+nav div button:hover {
+  background-color: #777;
+  transform: scale(1.05);
+}
+
+/* Username display */
+.username {
+  font-size: 16px;
+  color: #f9e079;
+  font-weight: bold;
+}
+
+/* Responsive design for small screens */
+@media (max-width: 768px) {
+  nav {
+      flex-direction: column;
+      align-items: flex-start;
   }
-  a:hover {
-    color: #747bff;
+
+  .nav-links {
+      flex-direction: column;
+      width: 100%;
+      padding: 10px 0;
   }
-  button {
-    background-color: #f9f9f9;
+
+  .nav-links button {
+      width: 100%;
+      text-align: left;
+  }
+
+  nav div:last-child {
+      width: 100%;
+      justify-content: space-between;
+      padding-top: 10px;
   }
 }
+
+
+nav {
+  transition: background-color 0.5s ease, box-shadow 0.5s ease;
+}
+
+nav.scrolled {
+  background-color: rgba(51, 51, 51, 0.9);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+.ItineraryListPage {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  background: #f0f8ff;
+}
+
+/* Add Itinerary Section */
+.AddItinerary, .AddDestination {
+  background: #fff;
+  padding: 20px;
+  margin-bottom: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out;
+}
+
+.AddItinerary:hover, .AddDestination:hover {
+  transform: translateY(-5px); /* Lift on hover to emphasize action */
+}
+
+.AddItinerary h3 , .AddDestination h3 {
+  color: #0072ff; /* Vibrant blue for titles */
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+/* Input Fields Styling */
+.AddItinerary input[type="text"], .AddDestination input[type="text"],
+.AddItinerary textarea, .AddDestination textarea {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  border: 2px solid #00c6ff;
+  border-radius: 5px;
+  font-size: 14px;
+  transition: border-color 0.3s ease;
+}
+
+.AddItinerary input[type="text"]:focus, .AddDestination input[type="text"]:focus,
+.AddItinerary textarea:focus, .AddDestination textarea:focus {
+  border-color: #0072ff; /* Color changes on focus to guide user attention */
+  outline: none;
+}
+
+.AddItinerary button, .AddDestination button {
+  background: #ff9900;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 50px;
+  font-size: 14px;
+  font-weight: bold;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.AddItinerary button:hover, .AddDestination button:hover {
+  background-color: #ff5500;
+  transform: translateY(-3px); 
+}
+
+.AddItinerary input, .AddDestination input{
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  border: 2px solid #00c6ff;
+  border-radius: 5px;
+  font-size: 14px;
+  transition: border-color 0.3s ease;
+}
+
+
+.ItineraryCard {
+  background-color: white;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  padding: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.ItineraryCard:hover {
+  transform: translateY(-5px); 
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.ItineraryCard h4 {
+  color: #0072ff;
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.ItineraryCard p {
+  color: #333;
+  line-height: 1.6;
+}
+
+/* Responsive Styling */
+@media (max-width: 768px) {
+  .ItineraryListPage {
+      padding: 10px;
+  }
+
+  .AddItinerary button,
+  .AddItinerary input[type="text"],
+  .AddItinerary textarea {
+      font-size: 12px;
+      padding: 10px;
+  }
+
+  .ItineraryCard h4 {
+      font-size: 16px;
+  }
+
+  .ItineraryCard p {
+      font-size: 14px;
+  }
+}
+
+.username {
+  background-color: #6b4f25;
+  border: none;
+  color: white;
+  padding: 20px 20px;
+  font-size: 12px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  border-radius: 60%;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+  margin-left: 20px;
+}
+
+.DestinationListPage {
+  padding: 20px;
+  background: linear-gradient(135deg, #a2c2e9, #fef2f2);
+  min-height: 100vh;
+}
+
+.toggle-form-button {
+  background-color: #2a9d8f;
+  color: #ffffff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-bottom: 20px;
+  transition: background-color 0.3s ease;
+}
+
+.toggle-form-button:hover {
+  background-color: #1f7f6f;
+}
+
+.destination-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.destination-cards .DestinationCard {
+  flex: 1 1 calc(33% - 20px); /* Adjust the width to fit 3 cards per row with gaps */
+  max-width: calc(33% - 20px);
+  background: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.destination-cards .DestinationCard:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.destination-cards .DestinationCard img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.destination-cards .DestinationCard .details {
+  padding: 15px;
+}
+
+.destination-cards .DestinationCard .details h3 {
+  font-size: 18px;
+  margin: 0;
+  color: #333;
+}
+
+.destination-cards .DestinationCard .details p {
+  color: #666;
+  font-size: 14px;
+}
+
+.SignupPage, .LoginPage {
+  background-color: #f9f9f9;
+  padding: 40px;
+  border-radius: 15px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+  max-width: 450px;
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover Effect */
+.SignupPage:hover, .LoginPage:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+}
+
+/* Header Styling */
+.SignupPage h1, .LoginPage h1 {
+  color: #2c3e50;
+  margin-bottom: 20px;
+  font-size: 30px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+/* Form Flexbox Structure */
+.SignupPage form, .LoginPage form {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Labels */
+.SignupPage label, .LoginPage label {
+  text-align: left;
+  margin-bottom: 5px;
+  color: #34495e;
+  font-weight: 600;
+  font-size: 14px;
+  letter-spacing: 0.5px;
+}
+
+/* Input Fields */
+.SignupPage input, .LoginPage input {
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #bdc3c7;
+  border-radius: 8px;
+  font-size: 16px;
+  color: #333;
+  background-color: #f0f0f0;
+  transition: border-color 0.3s ease, background-color 0.3s ease;
+}
+
+/* Focused Input Effect */
+.SignupPage input:focus, .LoginPage input:focus {
+  border-color: #3498db;
+  background-color: white;
+  outline: none;
+}
+
+/* Submit Button */
+.SignupPage button, .LoginPage button {
+  background-color: #3498db;
+  color: white;
+  border: none;
+  padding: 15px 30px;
+  border-radius: 10px;
+  font-size: 16px;
+  cursor: pointer;
+  font-weight: 600;
+  text-transform: uppercase;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Submit Button Hover */
+.SignupPage button:hover, .LoginPage button:hover {
+  background-color: #2980b9;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Error Message Styling */
+.error-message {
+  color: #e74c3c;
+  font-weight: 500;
+  margin-top: 15px;
+  font-size: 14px;
+}
+
+/* Footer Link */
+.SignupPage p a, .LoginPage p a {
+  color: #3498db;
+  text-decoration: none;
+  font-weight: 600;
+  margin-top: 10px;
+  display: block;
+  transition: color 0.3s ease;
+}
+
+/* Hover Effect on Links */
+.SignupPage p a:hover, .LoginPage p a:hover {
+  color: #2980b9;
+  text-decoration: underline;
+}
+
+.not-found {
+  text-align: center;
+  padding: 20px;
+}
+
+.not-found  h1 {
+  font-size: 3rem;
+  color: #333;
+}
+
+.not-found  p {
+  font-size: 1.2rem;
+  color: #666;
+}
+
+.not-found a {
+  display: inline-block;
+  padding: 10px 20px;
+  margin: 20px 0;
+  font-size: 1.2rem;
+  color: #fff;
+  background-color: #007bff;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+  cursor: pointer;
+}
+
+.not-found a:hover {
+  text-decoration: underline;
+}
+
+.game-container {
+  position: relative;
+  width: 100%;
+  max-width: 600px;
+  height: 200px;
+  margin: 40px auto;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  overflow: hidden;
+}
+
+.character {
+  position: absolute;
+  left: 20px;
+  bottom: 0;
+  font-size: 3rem;
+  cursor: pointer;
+  transition: bottom 0.1s ease-in-out;
+}
+
+.obstacle {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  font-size: 3rem;
+  animation: moveObstacle 2s infinite linear;
+}
+
+@keyframes moveObstacle {
+  0% {
+    right: -50px;
+  }
+  100% {
+    right: 100%;
+  }
+}
+
+.score {
+  font-size: 1.5rem;
+  color: #333;
+}
+
