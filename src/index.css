@@ -9,6 +9,7 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  font-family: "Montserrat", sans-serif;
 }
 a {
   font-weight: 500;
@@ -53,16 +54,18 @@ button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
 
+
 nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px 20px;
+  padding: 14px 40px;
   background-color: #333;
   color: white;
   position: sticky;
   top: 0;
   z-index: 1000;
+  width: auto;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
@@ -118,9 +121,13 @@ nav div button:hover {
 
 /* Username display */
 .username {
-  font-size: 16px;
-  color: #f9e079;
+  border: none;
+  color: white;
+  padding: 10px 10px;
+  font-size: 18px;
   font-weight: bold;
+  letter-spacing: 1px;
+  margin-left: 20px;
 }
 
 /* Responsive design for small screens */
@@ -128,6 +135,7 @@ nav div button:hover {
   nav {
       flex-direction: column;
       align-items: flex-start;
+      padding: 15px 20px;
   }
 
   .nav-links {
@@ -157,214 +165,16 @@ nav.scrolled {
   background-color: rgba(51, 51, 51, 0.9);
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
-.ItineraryListPage {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 20px;
-  background: #f0f8ff;
-}
-
-/* Add Itinerary Section */
-.AddItinerary, .AddDestination {
-  background: #fff;
-  padding: 20px;
-  margin-bottom: 30px;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease-in-out;
-}
-
-.AddItinerary:hover, .AddDestination:hover {
-  transform: translateY(-5px); /* Lift on hover to emphasize action */
-}
-
-.AddItinerary h3 , .AddDestination h3 {
-  color: #0072ff; /* Vibrant blue for titles */
-  font-weight: bold;
-  margin-bottom: 20px;
-}
-
-/* Input Fields Styling */
-.AddItinerary input[type="text"], .AddDestination input[type="text"],
-.AddItinerary textarea, .AddDestination textarea {
-  width: 100%;
-  padding: 12px;
-  margin: 10px 0;
-  border: 2px solid #00c6ff;
-  border-radius: 5px;
-  font-size: 14px;
-  transition: border-color 0.3s ease;
-}
-
-.AddItinerary input[type="text"]:focus, .AddDestination input[type="text"]:focus,
-.AddItinerary textarea:focus, .AddDestination textarea:focus {
-  border-color: #0072ff; /* Color changes on focus to guide user attention */
-  outline: none;
-}
-
-.AddItinerary button, .AddDestination button {
-  background: #ff9900;
-  color: white;
-  padding: 12px 20px;
-  border: none;
-  border-radius: 50px;
-  font-size: 14px;
-  font-weight: bold;
-  text-transform: uppercase;
-  cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.3s ease;
-}
-
-.AddItinerary button:hover, .AddDestination button:hover {
-  background-color: #ff5500;
-  transform: translateY(-3px); 
-}
-
-.AddItinerary input, .AddDestination input{
-  width: 100%;
-  padding: 12px;
-  margin: 10px 0;
-  border: 2px solid #00c6ff;
-  border-radius: 5px;
-  font-size: 14px;
-  transition: border-color 0.3s ease;
-}
-
-
-.ItineraryCard {
-  background-color: white;
-  border-radius: 10px;
-  margin-bottom: 20px;
-  padding: 20px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.ItineraryCard:hover {
-  transform: translateY(-5px); 
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-}
-
-.ItineraryCard h4 {
-  color: #0072ff;
-  font-size: 18px;
-  margin-bottom: 10px;
-}
-
-.ItineraryCard p {
-  color: #333;
-  line-height: 1.6;
-}
-
-/* Responsive Styling */
-@media (max-width: 768px) {
-  .ItineraryListPage {
-      padding: 10px;
-  }
-
-  .AddItinerary button,
-  .AddItinerary input[type="text"],
-  .AddItinerary textarea {
-      font-size: 12px;
-      padding: 10px;
-  }
-
-  .ItineraryCard h4 {
-      font-size: 16px;
-  }
-
-  .ItineraryCard p {
-      font-size: 14px;
-  }
-}
-
-.username {
-  background-color: #6b4f25;
-  border: none;
-  color: white;
-  padding: 20px 20px;
-  font-size: 12px;
-  font-weight: bold;
-  letter-spacing: 1px;
-  border-radius: 60%;
-  cursor: pointer;
-  transition: background-color 0.3s, transform 0.3s;
-  margin-left: 20px;
-}
-
-.DestinationListPage {
-  padding: 20px;
-  background: linear-gradient(135deg, #a2c2e9, #fef2f2);
-  min-height: 100vh;
-}
-
-.toggle-form-button {
-  background-color: #2a9d8f;
-  color: #ffffff;
-  border: none;
-  border-radius: 5px;
-  padding: 10px 20px;
-  font-size: 16px;
-  cursor: pointer;
-  margin-bottom: 20px;
-  transition: background-color 0.3s ease;
-}
-
-.toggle-form-button:hover {
-  background-color: #1f7f6f;
-}
-
-.destination-cards {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  justify-content: center;
-}
-
-.destination-cards .DestinationCard {
-  flex: 1 1 calc(33% - 20px); /* Adjust the width to fit 3 cards per row with gaps */
-  max-width: calc(33% - 20px);
-  background: #ffffff;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  overflow: hidden;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.destination-cards .DestinationCard:hover {
-  transform: scale(1.05);
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-}
-
-.destination-cards .DestinationCard img {
-  width: 100%;
-  height: 200px;
-  object-fit: cover;
-}
-
-.destination-cards .DestinationCard .details {
-  padding: 15px;
-}
-
-.destination-cards .DestinationCard .details h3 {
-  font-size: 18px;
-  margin: 0;
-  color: #333;
-}
-
-.destination-cards .DestinationCard .details p {
-  color: #666;
-  font-size: 14px;
-}
 
 .SignupPage, .LoginPage {
   background-color: #f9f9f9;
-  padding: 40px;
+  padding: 10vh;
+  max-width: 1200px;
   border-radius: 15px;
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
-  max-width: 450px;
+  max-width: 350px;
   width: 100%;
-  margin: 0 auto;
+  margin: 50px auto 0;
   text-align: center;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
@@ -388,7 +198,8 @@ nav.scrolled {
 /* Form Flexbox Structure */
 .SignupPage form, .LoginPage form {
   display: flex;
-  flex-direction: column;
+  flex-direction:column;
+  align-content: center;
 }
 
 /* Labels */
@@ -397,7 +208,7 @@ nav.scrolled {
   margin-bottom: 5px;
   color: #34495e;
   font-weight: 600;
-  font-size: 14px;
+  font-size: 16px;
   letter-spacing: 0.5px;
 }
 
@@ -430,7 +241,6 @@ nav.scrolled {
   font-size: 16px;
   cursor: pointer;
   font-weight: 600;
-  text-transform: uppercase;
   transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -539,3 +349,370 @@ nav.scrolled {
   color: #333;
 }
 
+.ItineraryListPage, .DestinationListPage {
+  padding: 20px;
+  margin: auto;
+  max-width: 1200px;
+  animation: fadeInUp 1s ease-in-out;
+}
+
+.toggle-form-button {
+  background-color: #3498db;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.toggle-form-button:hover {
+  background-color: #2980b9;
+  transform: scale(1.05);
+}
+
+.itinerary-cards, .destination-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.itinerary-cards > div, .destination-cards > div {
+  background-color: #f9f9f9;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 15px;
+  border-radius: 10px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.itinerary-cards > div:hover, .destination-cards > div:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+@keyframes fadeInUp {
+  0% {
+      opacity: 0;
+      transform: translateY(20px);
+  }
+  100% {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+@media (max-width: 768px) {
+  .toggle-form-button {
+      width: 100%;
+      font-size: 16px;
+  }
+}
+
+.ItineraryListPage, .DestinationListPage {
+  padding: 20px;
+  margin: auto;
+  max-width: 1200px;
+  animation: fadeInUp 1s ease-in-out;
+}
+
+.ItineraryListPage label, .DestinationListPage label{
+  padding: 50px;
+  margin: auto;
+  animation: fadeInUp 1s ease-in-out;
+}
+
+.AddItinerary, .AddDestination {
+  background: #fff;
+  padding: 20px;
+  margin-bottom: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out;
+}
+
+.AddItinerary:hover, .AddDestination:hover {
+  transform: translateY(-5px); 
+}
+
+.AddItinerary h3 , .AddDestination h3 {
+  color: #474849; 
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+.AddItinerary label , .AddDestination label {
+  color: #474849; 
+  font-weight: bold;
+  padding-left: 10px;
+}
+/* Input Fields Styling */
+.AddItinerary input[type="text"], .AddDestination input[type="text"],
+.AddItinerary textarea, .AddDestination textarea {
+  width: 100%;
+  padding: 15px;
+  margin: 15px 0;
+  border: 2px solid #00c6ff;
+  border-radius: 5px;
+  font-size: 14px;
+  box-sizing: border-box;
+  transition: border-color 0.3s ease;
+}
+
+.AddItinerary input[type="text"]:focus, .AddDestination input[type="text"]:focus,
+.AddItinerary textarea:focus, .AddDestination textarea:focus {
+  border-color: #0072ff;
+  outline: none; /* Removes the default outline */
+}
+
+.AddItinerary input[type="text"]:hover, .AddDestination input[type="text"]:hover,
+.AddItinerary textarea:hover, .AddDestination textarea:hover {
+  border-color: #0072ff;
+}
+
+
+.AddItinerary input[placeholder], .AddDestination input[placeholder],
+.AddItinerary textarea[placeholder], .AddDestination textarea[placeholder] {
+  margin: 0px; 
+  margin-bottom: 25px;
+  padding: 15px;
+  box-sizing: border-box;
+}
+
+.AddItinerary button, .AddDestination button {
+  background: #3498db;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 50px;
+  margin-top: 20px;
+  font-size: 14px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.AddItinerary button:hover, .AddDestination button:hover {
+  background-color: #246692;
+  transform: translateY(-3px); 
+}
+
+.AddItinerary input, .AddDestination input{
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  border: 2px solid #00c6ff;
+  border-radius: 5px;
+  font-size: 14px;
+  transition: border-color 0.3s ease;
+}
+
+.toggle-form-button {
+  background-color: #3498db;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.toggle-form-button:hover {
+  background-color: #2980b9;
+  transform: scale(1.05);
+}
+
+.itinerary-cards, .destination-cards{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-top: 20px;
+  padding: 0 20px;
+}
+
+.destination-cards img{
+  width: 100%; 
+  height: auto; 
+  border-radius: 8px;
+  object-fit: contain;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease-in-out;
+}
+
+.itinerary-cards > div, .destination-cards > div {
+  flex: 1 1 calc(33.33% - 20px); /* Responsive card sizing */
+  background-color: #f9f9f9;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 20px; /* Reduced padding for better content fit */
+  border-radius: 10px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  min-width: 280px; /* Ensures cards don’t shrink below this width */
+  max-width: 100%; /* Prevents cards from stretching too far */
+  box-sizing: border-box; /* Ensure padding and width calculations include borders and padding */
+}
+
+.itinerary-cards > div:hover, .destination-cards > div:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+@keyframes fadeInUp {
+  0% {
+      opacity: 0;
+      transform: translateY(20px);
+  }
+  100% {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+@media (max-width: 768px) {
+  .toggle-form-button {
+      width: 100%;
+      font-size: 16px;
+  }
+}
+
+.ItineraryDetails, .DestinationDetails {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  animation: fadeIn 0.6s ease-in-out;
+}
+
+/* Heading Styling */
+.ItineraryDetails h2, .DestinationDetails h2 {
+  font-size: 28px;
+  color: #3498db;
+  margin-bottom: 15px;
+  text-align: center;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+.ItineraryDetails p, .DestinationDetails p {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #333;
+  margin-bottom: 20px;
+  text-align: justify;
+}
+
+.ItineraryDetails img, .DestinationDetails img {
+  width: 100%;
+  height: auto;
+  max-height: 500px; /* Set a maximum height for larger images */
+  border-radius: 10px;
+  object-fit: cover; /* Ensures the image maintains its aspect ratio while covering the entire area */
+  margin: 20px 0;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+
+/* Associated Itineraries List */
+.DestinationDetails .itineraries h3 {
+  font-size: 22px;
+  color: #3498db;
+  margin-bottom: 15px;
+  font-weight: bold;
+}
+
+.DestinationDetails ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.DestinationDetails ul li {
+  margin: 10px 0;
+}
+
+.DestinationDetails ul li a {
+  text-decoration: none;
+  color: #0072ff;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.DestinationDetails ul li a:hover {
+  color: #005bb5;
+}
+
+/* Buttons */
+.ItineraryDetails button, .DestinationDetails button {
+  background-color: #3498db;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 25px;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  margin-right: 10px;
+}
+
+.ItineraryDetails button:hover, .DestinationDetails button:hover {
+  background-color: #246692;
+  transform: translateY(-2px);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .ItineraryDetails, .DestinationDetails {
+    padding: 15px;
+    margin: 0 10px;
+  }
+
+  .ItineraryDetails h2, .DestinationDetails h2 {
+    font-size: 24px;
+  }
+
+  .ItineraryDetails p, .DestinationDetails p {
+    font-size: 14px;
+  }
+
+  .DestinationDetails img {
+    margin: 15px 0;
+    max-height: 300px;
+  }
+
+  .ItineraryDetails button, .DestinationDetails button {
+    padding: 8px 16px;
+    font-size: 12px;
+  }
+}
+
+/* Hover Animation for Cards */
+.destination-details, .itinerary-details {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.destination-details .DestinationCard, .itinerary-details .ItineraryCard {
+  flex-basis: calc(50% - 10px);
+  margin-bottom: 20px;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
