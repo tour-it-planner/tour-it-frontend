@@ -11,9 +11,10 @@ import Navbar from './components/Navbar';
 import SignupPage from './pages/SignupPage';
 import LoginPage from './pages/LoginPage';
 import Footer from './components/Footer';
+import NotFoundPage from './pages/NotFoundPage';
 import IsPrivate from './components/IsPrivate';
 import IsAnon from './components/isAnon';
-import NotFoundPage from './pages/NotFoundPage';
+
 
 function App() {
 
