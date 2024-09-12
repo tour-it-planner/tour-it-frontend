@@ -20,7 +20,6 @@ function App() {
   return (
     <div className="wrapper">
     <div className="content">
-      <h1>Tour It</h1>
       <Navbar />
       <Routes>
         <Route path="/itineraries" element={<ItineraryListPage />} />
