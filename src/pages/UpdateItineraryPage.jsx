@@ -164,7 +164,7 @@ function UpdateItineraryPage(props) {
                 <button type="submit">Update Itinerary</button>
             </form>
 
-            <button onClick={deleteItinerary}>Delete Itinerary</button>
+            <button className="Delete" onClick={deleteItinerary}>Delete Itinerary</button>
         </div>
     );
 }
