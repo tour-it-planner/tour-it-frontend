@@ -11,6 +11,8 @@ import Select from 'react-select'
       const [destination, setDestination] = useState([]);
       const [options, setOptions] = useState([]);
 
+      const [inputFields, setInputFields] = useState([{ name: "" }]);
+
       useEffect(() => {
         const fetchDestinations = () => {
           destinationsService.getAllDestinations()
@@ -33,10 +35,14 @@ import Select from 'react-select'
         e.preventDefault();
         console.log("Selected Destinations before submitting: ", destination);
         const selectedDestinations = destination.map((dest) => dest.value);
-        const requestBody = { title, description, destinations: selectedDestinations };
-    
+        
+        
+
+        const itineraries = inputFields.map(field => field.name); 
+        const requestBody = { title, description, destinations: selectedDestinations, details: itineraries };  
+        
         console.log("Submitting: ", requestBody);
-        console.log("Submitting: ", requestBody); 
+        
     
         itinerariesService.createItinerary(requestBody)
           .then((response) => {
@@ -44,11 +50,29 @@ import Select from 'react-select'
             setTitle("");
             setDescription("");
             setDestination([]);
+            setInputFields([{ name: "" }]);
             props.refreshItineraries(response.data);
           })
           .catch((error) => console.log(error));
       };
+      
+      const handleFormChange = (index, event) => {
+        const data = [...inputFields];
+        data[index][event.target.name] = event.target.value;
+        setInputFields(data);
+      };
     
+     
+      const addFields = () => {
+        setInputFields([...inputFields, { name: "" }]);
+      };
+    
+     
+      const removeFields = (index) => {
+        const data = [...inputFields];
+        data.splice(index, 1);
+        setInputFields(data);
+      };
     
       return (
         <div className="AddItinerary">
@@ -74,6 +98,27 @@ import Select from 'react-select'
               value={description}
               onChange={(e) => setDescription(e.target.value)}
             />
+
+            <h4>Add Itineraries:</h4>
+              {inputFields.map((input, index) => {
+               return (
+              <div key={index}>
+                <input
+                name="name"
+                placeholder="Itinerary Name"
+                value={input.name}
+                onChange={(event) => handleFormChange(index, event)}
+                />
+              <button type="button" className="button-action button-remove" onClick={() => removeFields(index)}>
+                X
+              </button>
+            </div>
+          );
+        })}
+
+        <button type="button" className="button-action button-add" onClick={addFields}>
+          +
+        </button>
 
             <label>Destination:</label>
             <Select
