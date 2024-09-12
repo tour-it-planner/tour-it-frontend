@@ -37,7 +37,9 @@ function DestinationListPage() {
             </button>
             
             {showForm ? (
+                <div className="AddButton">
                 <AddDestination refreshDestinations={handleNewDestination} />
+                </div>
             ) : (
                 <div className="destination-cards">
                     {destinations.slice().reverse().map((destination) => (
