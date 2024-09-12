@@ -40,7 +40,9 @@ function ItineraryListPage() {
             )}
             
             {showForm ? (
+                <div className="AddButton">
                 <AddItinerary refreshItineraries={handleNewItinerary} />
+                </div>
             ) : (
                 <div className="itinerary-cards">
                     {itineraries.map((itinerary) => (
