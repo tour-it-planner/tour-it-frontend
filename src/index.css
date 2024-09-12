@@ -20,15 +20,15 @@ a:hover {
   color: #535bf2;
 }
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
-  display: flex;
-  place-items: center;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  min-width: 320px;
-  min-height: 100vh;
+  padding: 0;
 }
 
 h1 {
@@ -62,11 +62,17 @@ nav {
   padding: 14px 40px;
   background-color: #333;
   color: white;
-  position: sticky;
+  position: fixed;
   top: 0;
   z-index: 1000;
-  width: auto;
+  width: 100vw;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.5s ease, box-shadow 0.5s ease;
+}
+
+nav.scrolled {
+  background-color: rgba(51, 51, 51, 0.8); /* Slight transparency */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Stronger shadow */
 }
 
 /* Navbar links */
@@ -412,7 +418,7 @@ nav.scrolled {
   }
 }
 
-.ItineraryListPage, .DestinationListPage {
+.ItineraryListPage, .DestinationListPage  {
   padding: 20px;
   margin: auto;
   max-width: 1200px;
@@ -425,7 +431,7 @@ nav.scrolled {
   animation: fadeInUp 1s ease-in-out;
 }
 
-.AddItinerary, .AddDestination {
+.AddItinerary, .AddDestination , .EditItineraryPage{
   background: #fff;
   padding: 20px;
   margin-bottom: 30px;
@@ -434,23 +440,23 @@ nav.scrolled {
   transition: transform 0.3s ease-in-out;
 }
 
-.AddItinerary:hover, .AddDestination:hover {
+.AddItinerary:hover, .AddDestination:hover, .EditItineraryPage :hover{
   transform: translateY(-5px); 
 }
 
-.AddItinerary h3 , .AddDestination h3 {
+.AddItinerary h3 , .AddDestination h3 , .EditItineraryPage h3{
   color: #474849; 
   font-weight: bold;
   margin-bottom: 20px;
 }
-.AddItinerary label , .AddDestination label {
+.AddItinerary label , .AddDestination label , .EditItineraryPage label{
   color: #474849; 
   font-weight: bold;
   padding-left: 10px;
 }
 /* Input Fields Styling */
-.AddItinerary input[type="text"], .AddDestination input[type="text"],
-.AddItinerary textarea, .AddDestination textarea {
+.AddItinerary input[type="text"], .AddDestination input[type="text"],.EditItineraryPage[type="text"]
+.AddItinerary textarea, .AddDestination textarea, .EditItineraryPage textarea{
   width: 100%;
   padding: 15px;
   margin: 15px 0;
@@ -461,27 +467,27 @@ nav.scrolled {
   transition: border-color 0.3s ease;
 }
 
-.AddItinerary input[type="text"]:focus, .AddDestination input[type="text"]:focus,
-.AddItinerary textarea:focus, .AddDestination textarea:focus {
+.AddItinerary input[type="text"]:focus, .AddDestination input[type="text"]:focus, .EditItineraryPage input[type="text"]:focus, 
+.AddItinerary textarea:focus, .AddDestination textarea:focus, .EditItineraryPage textarea:focus {
   border-color: #0072ff;
   outline: none; /* Removes the default outline */
 }
 
-.AddItinerary input[type="text"]:hover, .AddDestination input[type="text"]:hover,
-.AddItinerary textarea:hover, .AddDestination textarea:hover {
+.AddItinerary input[type="text"]:hover, .AddDestination input[type="text"]:hover,.EditItineraryPage input[type="text"]:hover, 
+.AddItinerary textarea:hover, .AddDestination textarea:hover, .EditItineraryPage textarea:hover {
   border-color: #0072ff;
 }
 
 
-.AddItinerary input[placeholder], .AddDestination input[placeholder],
-.AddItinerary textarea[placeholder], .AddDestination textarea[placeholder] {
+.AddItinerary input[placeholder], .AddDestination input[placeholder],.EditItineraryPage input[placeholder]
+.AddItinerary textarea[placeholder], .AddDestination textarea[placeholder], .EditItineraryPage textarea[placeholder] {
   margin: 0px; 
   margin-bottom: 25px;
   padding: 15px;
   box-sizing: border-box;
 }
 
-.AddItinerary button, .AddDestination button {
+.AddItinerary button, .AddDestination button , .EditItineraryPage button{
   background: #3498db;
   color: white;
   padding: 12px 20px;
@@ -495,12 +501,12 @@ nav.scrolled {
   transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
-.AddItinerary button:hover, .AddDestination button:hover {
+.AddItinerary button:hover, .AddDestination button:hover, .EditItineraryPage button:hover {
   background-color: #246692;
   transform: translateY(-3px); 
 }
 
-.AddItinerary input, .AddDestination input{
+.AddItinerary input, .AddDestination input, .EditItineraryPage input {
   width: 100%;
   padding: 12px;
   margin: 10px 0;

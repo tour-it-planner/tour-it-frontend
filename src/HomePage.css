@@ -180,28 +180,38 @@
 }
 
 
+body, html {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+/* Main container that holds content */
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Full viewport height */
+}
+
+/* Footer container is at the bottom of the page */
+.footer-container {
+  flex-shrink: 0; /* Prevents the footer from shrinking */
+}
+
+/* Footer styling */
 .footer {
-  background-color: #333; 
+  background-color: #333;
   color: white;
   text-align: center;
-  padding: 5px 40px;
-  width: auto;
-  margin-top: 50px;
-  animation: fadeIn 1.2s ease-in-out;
+  padding: 14px 40px; /* Consistent padding */
+  width: 100%;
+  font-size: 16px;
   position: relative;
-  bottom: 0;
-  font-size: 16px; 
-  box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1); 
+  box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
+  animation: fadeIn 1.2s ease-in-out;
 }
 
-
-@media (max-width: 768px) {
-  .footer {
-    padding: 15px 20px;
-    font-size: 14px;
-  }
-}
-
+/* Footer animation */
 @keyframes fadeIn {
   0% {
     opacity: 0;
@@ -209,4 +219,37 @@
   100% {
     opacity: 1;
   }
+}
+
+/* Footer links and images */
+.footer img {
+  margin: 0 10px;
+  vertical-align: middle;
+  transition: transform 0.3s ease;
+}
+
+.footer img:hover {
+  transform: scale(1.1); /* Scale on hover */
+}
+
+.footer a {
+  color: white;
+  text-decoration: none;
+}
+
+.footer p {
+  margin: 10px 0;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .footer {
+    padding: 10px 20px;
+    font-size: 14px;
+  }
+}
+
+/* Ensures footer is pushed to the bottom of the page */
+.content {
+  flex: 1; /* Push content to take up available space */
 }
