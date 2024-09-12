@@ -14,6 +14,7 @@ function UpdateItineraryPage(props) {
     const [description, setDescription] = useState("");
     const [destinations, setDestinations] = useState([]);
     const [options, setOptions] = useState([]);
+    const [inputFields, setInputFields] = useState([{ name: "" }]); 
 
     const navigate = useNavigate();
     const { itineraryId } = useParams();
@@ -48,6 +49,12 @@ function UpdateItineraryPage(props) {
                     label: dest.location
                 }));
                 setDestinations(selectedDestinations);
+
+                setInputFields(
+                    oneItinerary.details.length > 0
+                      ? oneItinerary.details.map((detail) => ({ name: detail }))
+                      : [{ name: "" }]
+                  );
             })
             .catch((error) => console.log(error));
 
@@ -57,7 +64,8 @@ function UpdateItineraryPage(props) {
     const handleFormSubmit = (e) => {
         e.preventDefault();
         const selectedDestinations = destinations.map((dest) => dest.value);
-        const requestBody = { title, description, destinations: selectedDestinations };
+        const itineraries = inputFields.map((field) => field.name); 
+        const requestBody = { title, description, destinations: selectedDestinations ,details: itineraries};
 
 
 
@@ -76,6 +84,22 @@ function UpdateItineraryPage(props) {
             .then(() => navigate("/itineraries"))
             .catch((err) => console.log(err));
     };
+
+    const handleFormChange = (index, event) => {
+        const data = [...inputFields];
+        data[index][event.target.name] = event.target.value;
+        setInputFields(data);
+      };
+    
+      const addFields = () => {
+        setInputFields([...inputFields, { name: "" }]);
+      };
+    
+      const removeFields = (index) => {
+        const data = [...inputFields];
+        data.splice(index, 1);
+        setInputFields(data);
+      };
 
 
     return (
@@ -97,6 +121,32 @@ function UpdateItineraryPage(props) {
                     value={description}
                     onChange={(e) => setDescription(e.target.value)}
                 />
+
+            <h4>Edit Itineraries:</h4>
+                {inputFields.map((input, index) => (
+                    <div key={index}>
+            <input
+              name="name"
+              placeholder="Itinerary Name"
+              value={input.name}
+              onChange={(event) => handleFormChange(index, event)}
+            />
+            <button
+              type="button"
+              className="button-action button-remove"
+              onClick={() => removeFields(index)}
+            >
+              X
+            </button>
+          </div>
+        ))}
+        <button
+          type="button"
+          className="button-action button-add"
+          onClick={addFields}
+        >
+          +
+        </button>
 
                 <label>Destination:</label>
                 <Select
