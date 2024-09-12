@@ -18,8 +18,8 @@ import IsAnon from '/src/components/IsAnon.jsx';
 function App() {
 
   return (
-
-    <div className="App">
+    <div className="wrapper">
+    <div className="content">
       <h1>Tour It</h1>
       <Navbar />
       <Routes>
@@ -42,7 +42,9 @@ function App() {
         <Route path="*" element={<NotFoundPage />} />
 
       </Routes>
-      <Footer />
+      
+    </div>
+    <Footer />
     </div>
   );
 }
