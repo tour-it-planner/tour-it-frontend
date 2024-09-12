@@ -107,8 +107,53 @@ function UpdateItineraryPage(props) {
                     options={options}
                     value={destinations}
                     onChange={(selectedOptions) => {
-                    console.log("Selected Options: ", selectedOptions);  
-                    setDestinations(selectedOptions ? selectedOptions : []);  
+                        console.log("Selected Options: ", selectedOptions);
+                        setDestinations(selectedOptions ? selectedOptions : []);
+                    }}
+                    styles={{
+                        control: (base) => ({
+                            ...base,
+                            border: '2px solid #00c6ff',
+                            borderRadius: '5px',
+                            padding: '10px',
+                            fontSize: '18px',
+                            marginBottom: '15px',
+                            boxShadow: 'none',
+                            '&:hover': { borderColor: '#0072ff' },
+                        }),
+                        placeholder: (base) => ({
+                            ...base,
+                            color: '#888',
+                            fontSize: '16px',
+                        }),
+                        multiValue: (base) => ({
+                            ...base,
+                            backgroundColor: '#e0f7ff',
+                            borderRadius: '4px',
+                        }),
+                        multiValueLabel: (base) => ({
+                            ...base,
+                            color: '#474849',
+                        }),
+                        multiValueRemove: (base) => ({
+                            ...base,
+                            color: '#ff0000',
+                            ':hover': {
+                                backgroundColor: '#ffcccc',
+                                color: '#ff0000',
+                            },
+                        }),
+                        menu: (base) => ({
+                            ...base,
+                            borderRadius: '5px',
+                            marginTop: '5px',
+                        }),
+                        option: (base, state) => ({
+                            ...base,
+                            backgroundColor: state.isSelected ? '#0072ff' : '#fff',
+                            color: state.isSelected ? '#fff' : '#333',
+                            '&:hover': { backgroundColor: '#f0f0f0', color: '#0072ff' },
+                        }),
                     }}
                 />
 
