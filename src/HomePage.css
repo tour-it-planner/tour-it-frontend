@@ -191,6 +191,8 @@ body, html {
   display: flex;
   flex-direction: column;
   min-height: 100vh; /* Full viewport height */
+  position: relative; /* Ensures z-index applies correctly to the dropdown */
+  z-index: 1;
 }
 
 /* Footer container is at the bottom of the page */
@@ -207,6 +209,7 @@ body, html {
   width: 100%;
   font-size: 16px;
   position: relative;
+  z-index: 0;
   box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
   animation: fadeIn 1.2s ease-in-out;
 }

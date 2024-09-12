@@ -1,0 +1,130 @@
+.DestinationListPage, .ItineraryListPage {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+  }
+  
+
+  .toggle-form-button {
+    background-color: #00c6ff;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    font-size: 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-bottom: 20px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  }
+  
+  .toggle-form-button:hover {
+    background-color: #0072ff;
+    transform: scale(1.05);
+  }
+  
+  .AddButton {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
+  
+  .destination-cards, .itinerary-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    width: 100%;
+    max-width: 1200px;
+    margin-top: 20px;
+  }
+  
+  /* Card Styling */
+  .DestinationCard, .ItineraryCard {
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  
+  .DestinationCard:hover, .ItineraryCard:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  }
+  
+  .DestinationCard h3, .ItineraryCard h3 {
+    font-size: 22px;
+    margin-bottom: 10px;
+    text-wrap: nowrap;
+    overflow: hidden;
+    color: #007bff
+  }
+  
+  .DestinationCard p, .ItineraryCard p {
+    font-size: 16px;
+    line-height: 1.6;
+    text-wrap: nowrap;
+    color: #555;
+    overflow: hidden;
+    animation: fadeInUp 1s ease-in-out;
+  }
+  
+
+  @media (max-width: 768px) {
+    .destination-cards, .itinerary-cards {
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 15px;
+      text-align: center;
+    }
+  
+    .toggle-form-button {
+      width: 100%;
+      padding: 10px;
+    }
+  }
+  
+
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  input[type="text"] {
+    padding: 10px;
+    font-size: 16px;
+    border: 2px solid #00c6ff;
+    border-radius: 5px;
+    transition: border-color 0.3s ease;
+  }
+  
+  input[type="text"]:focus {
+    border-color: #0072ff;
+  }
+  
+
+  button[type="submit"] {
+    background-color: #0072ff;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+  }
+  
+  button[type="submit"]:hover {
+    background-color: #005bb5;
+    transform: scale(1.05);
+  }
+
+  
+
+  
