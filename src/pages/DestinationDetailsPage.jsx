@@ -1,7 +1,7 @@
 import {useState, useEffect} from "react";
 import{Link, useParams} from "react-router-dom";
 import destinationsService from "../services/destinations.service";
-
+import "/src/details.css"
 
 function DestinationDetailsPage(){
 
@@ -31,7 +31,9 @@ function DestinationDetailsPage(){
                 <h2>{destination.location}</h2>
                 
                 <img src={destination.imageUrl} alt={destination.location} />
+                <div className="description-container">
                 <p>{destination.description}</p>
+                </div>
                 <div className="itineraries">
                     <h3>Associated Itineraries:</h3>
                     {destination.itineraries && destination.itineraries.length > 0 ? (

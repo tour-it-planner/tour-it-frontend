@@ -2,6 +2,7 @@ import destinationsService from "../services/destinations.service";
 import DestinationCard from "../components/DestinationCard";
 import AddDestination from "../components/AddDestination";
 import { useState, useEffect } from "react";
+import "/src/List.css"
 
 
 function DestinationListPage() {

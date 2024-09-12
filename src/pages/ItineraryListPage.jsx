@@ -3,6 +3,7 @@ import AddItinerary from "../components/AddItinerary";
 import ItineraryCard from "../components/ItineraryCard";
 import itinerariesService from "../services/itineraries.service";
 import { AuthContext } from "../context/auth.context";
+import "/src/List.css";
 
 
 function ItineraryListPage() {

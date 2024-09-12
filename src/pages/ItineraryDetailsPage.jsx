@@ -3,6 +3,7 @@ import { Link, useParams } from "react-router-dom";
 import DestinationCard from "../components/DestinationCard";
 import itinerariesService from "../services/itineraries.service";
 import moment from "moment";
+import "/src/details.css"
 
 function ItineraryDetailsPage() {
 
@@ -38,10 +39,14 @@ function ItineraryDetailsPage() {
       {itinerary && (
         <>
           <h2>{itinerary.title}</h2>
+
+          <div className="description-container">
           <p>{itinerary.description}</p>
+        </div>
+        
           <ul>
             {itinerary.details.map((e) => {
-              return(<li>{e}</li>)
+              return(<li key={"details-each"}>{e}</li>)
             })}
           </ul>
 

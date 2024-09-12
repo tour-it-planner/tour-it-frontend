@@ -1,5 +1,6 @@
 import { useState } from "react";
 import destinationsService from "../services/destinations.service";
+import "/src/add.css";
 
 function AddDestination(props) {
   const [location, setLocation] = useState("");

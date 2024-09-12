@@ -2,7 +2,8 @@ import { useState, useEffect } from "react";
 import itinerariesService from "../services/itineraries.service";
 import destinationsService from "../services/destinations.service";
 import React from "react";
-import Select from 'react-select'
+import Select from 'react-select';
+import "/src/add.css";
 
 
     function AddItinerary(props) {
@@ -83,7 +84,7 @@ import Select from 'react-select'
             <input
               type="text"
               name="title"
-              placeholder="Enter the Title"
+              placeholder="Enter Title"
               required
               value={title}
               onChange={(e) => setTitle(e.target.value)}
@@ -99,26 +100,35 @@ import Select from 'react-select'
               onChange={(e) => setDescription(e.target.value)}
             />
 
-            <h4>Add Itineraries:</h4>
-              {inputFields.map((input, index) => {
-               return (
-              <div key={index}>
-                <input
-                name="name"
-                placeholder="Itinerary Name"
-                value={input.name}
-                onChange={(event) => handleFormChange(index, event)}
-                />
-              <button type="button" className="button-action button-remove" onClick={() => removeFields(index)}>
-                X
+            <label>Details:</label>
+            <div className="itinerary-input-section">
+              {inputFields.map((input, index) => (
+                <div key={index} className="itinerary-input-row">
+                  <input
+                    name="name"
+                    placeholder="Type Here More Trip Details"
+                    value={input.name} 
+                    onChange={(event) => handleFormChange(index, event)}
+                  />
+                  <button
+                    type="button"
+                    className="button-action button-remove"
+                    onClick={() => removeFields(index)}
+                  >
+                    x 
+                  </button>
+                </div>
+              ))}
+              <button
+                type="button"
+                style={{ fontWeight: "bold" }}
+                className="button-action button-add"
+                onClick={addFields}
+                
+              >
+                +
               </button>
             </div>
-          );
-        })}
-
-        <button type="button" className="button-action button-add" onClick={addFields}>
-          +
-        </button>
 
             <label>Destination:</label>
             <Select
@@ -170,6 +180,14 @@ import Select from 'react-select'
                   ...base,
                   borderRadius: '5px',
                   marginTop: '5px',
+                  zIndex: 9999,
+                  position: "absolute",
+                }),
+                menuList: (base) => ({
+                  ...base,
+                  maxHeight: '300px', 
+                  overflowY: 'auto', 
+                  zIndex: 9999,
                 }),
                 option: (base, state) => ({
                   ...base,
