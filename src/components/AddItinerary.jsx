@@ -3,7 +3,7 @@ import itinerariesService from "../services/itineraries.service";
 import destinationsService from "../services/destinations.service";
 import React from "react";
 import Select from 'react-select';
-import "/src/add.css";
+import "../Add.css";
 
 
     function AddItinerary(props) {

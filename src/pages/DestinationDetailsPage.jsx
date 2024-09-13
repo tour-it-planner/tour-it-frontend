@@ -1,7 +1,7 @@
 import {useState, useEffect} from "react";
 import{Link, useParams} from "react-router-dom";
 import destinationsService from "../services/destinations.service";
-import "/src/details.css"
+import "../Details.css"
 
 function DestinationDetailsPage(){
 

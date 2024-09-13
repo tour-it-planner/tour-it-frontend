@@ -3,7 +3,7 @@ import { Link, useParams } from "react-router-dom";
 import DestinationCard from "../components/DestinationCard";
 import itinerariesService from "../services/itineraries.service";
 import moment from "moment";
-import "/src/details.css"
+import "../Details.css"
 
 function ItineraryDetailsPage() {
 
