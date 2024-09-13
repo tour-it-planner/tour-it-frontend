@@ -6,7 +6,7 @@ export default defineConfig({
   plugins: [react()],
   build: {
     rollupOptions: {
-      external: ['/src/details.css'], // Exclude the CSS file from Rollup
+      external: ['/src/details.css', '/src/add.css'], // Exclude the CSS file from Rollup
     },
   },
 })
