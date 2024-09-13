@@ -1,5 +1,5 @@
 
-![logo-tour-it](public/images/logo-tour-it.PNG)
+![logo-tour-it](public/images/logo-tour-it.png)
 
 
 # Tour IT Frontend
