@@ -1,5 +1,5 @@
 
-![logo-tour-it](public/images/logo-tour-it.png)
+![logo-tour-it](public/images/logo-tour-it.png =400x400)
 
 
 # Tour IT Frontend
