@@ -1,7 +1,7 @@
 
-![logo-tour-it](public/images/logo-tour-it.png =400x400)
+![tour-it-logo](public/images/logo.png)
 
-
+ 
 # Tour IT Frontend
 
 Welcome to the Tour IT Frontend repository! This project is a frontend application designed to work with the Tour IT Planner platform, which helps users plan their travel itineraries effectively.
