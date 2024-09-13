@@ -6,7 +6,8 @@ import destinationsService from "../services/destinations.service";
 import React from "react";
 import Select from 'react-select';
 import { Link } from "react-router-dom";
-import "/src/update.css";
+import "/src/Update.css";
+
 
 
 function UpdateItineraryPage(props) {
