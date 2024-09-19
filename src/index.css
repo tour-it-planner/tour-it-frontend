@@ -53,7 +53,6 @@ button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
 
-
 nav {
   display: flex;
   justify-content: space-between;
@@ -72,6 +71,7 @@ nav {
 /* Navbar links */
 .nav-links {
   display: flex;
+  align-items: center;
   gap: 20px;
 }
 
@@ -88,7 +88,9 @@ nav {
   transition: all 0.3s ease;
   padding: 10px;
   border-radius: 5px;
+  margin: 0 8px;
 }
+
 
 /* Hover animation for buttons */
 .nav-links button:hover {
@@ -121,7 +123,8 @@ nav div button:hover {
 
 /* Username display */
 .username {
-  border: none;
+  display: flex;
+  align-items: center;
   color: white;
   padding: 10px 10px;
   font-size: 18px;
@@ -130,11 +133,31 @@ nav div button:hover {
   margin-left: 20px;
 }
 
+.logout {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  width: 50px;
+  height: auto;
+  display: flex;
+  padding: 0;
+  margin: 0;
+  box-shadow: 0 0 0;
+  transform: scale(1.4); 
+  transform-origin: center; 
+  }
+.user-options {
+    display: flex;
+    align-items: center; /* Ensures items are aligned vertically */
+    gap: 10px; /* Optional: Space between username and logout button */
+  }
+
 /* Responsive design for small screens */
 @media (max-width: 768px) {
   nav {
       flex-direction: column;
-      align-items: flex-start;
       padding: 15px 20px;
       text-align: center;
   }
@@ -152,6 +175,19 @@ nav div button:hover {
   .nav-links button {
       width: 100%;
       text-align: left;
+  }
+  .user-options {
+    flex-direction: column;
+        align-items: center;
+        gap: 5px;
+        text-align: center;
+        margin-top: 10px;
+  }
+  .username{
+    margin-left: 0;
+  }
+  .logout {
+    margin-left: 0;
   }
 
 }

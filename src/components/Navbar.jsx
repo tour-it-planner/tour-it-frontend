@@ -2,6 +2,7 @@ import { useContext } from "react";
 import { AuthContext } from "../context/auth.context";
 import { Link } from "react-router-dom";
 
+
 function Navbar() {
 
     const { isLoggedIn, user, logOutUser } = useContext(AuthContext)
@@ -10,7 +11,7 @@ function Navbar() {
         <nav>
             <div className="nav-links">
                 <Link to="/">
-                    <button>Home</button>
+                    <img src="/images/logo-tour-it.png" alt="Logo" className="logo" />
                 </Link>
 
                 {isLoggedIn && (
@@ -26,9 +27,14 @@ function Navbar() {
                 )}
             </div>
             {isLoggedIn ? (
-                <div>
+                <div className="user-options"> 
+                <div className="logout">
                     <button onClick={logOutUser}>Logout</button>
-                    <span className="username">{user && user.name}</span>
+                    
+                </div>
+                <div>
+                <span className="username">{user && user.name}</span>
+                </div>
                 </div>
             ) : (
                 <div>
