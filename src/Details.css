@@ -31,6 +31,12 @@
     overflow-wrap: break-word; 
   }
   
+  .Created {
+    margin-top: 20px;
+    font-size: 15px !important;
+    font-style: italic;
+  }
+
   .description-container {
     margin-bottom: 20px;
   }
