@@ -50,6 +50,7 @@
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     position: relative;
     overflow: hidden;
+    
   }
   
   
@@ -75,6 +76,7 @@
     overflow: hidden;
     animation: fadeInUp 1s ease-in-out;
     text-align: center;
+    margin-bottom: 50px;
   }
   
 
