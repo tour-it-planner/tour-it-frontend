@@ -7,8 +7,8 @@ import { Link } from "react-router-dom";
             <div className="DestinationCard card">
                 <Link to={`/destinations/${_id}`}>
                     <h3>{location}</h3>
+                    <img src={imageUrl}/>
                 </Link>
-                <img src={imageUrl}/>
             </div>
         );
     }

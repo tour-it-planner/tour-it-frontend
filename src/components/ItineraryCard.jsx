@@ -6,8 +6,8 @@ function ItineraryCard( { title, description, _id } ) {
         <div className="ItineraryCard">
             <Link to={`/itineraries/${_id}`}>
                 <h3>{title}</h3>
+                <p style={{ maxWidth: "400px" }}>{description} </p>
             </Link>
-             <p style={{ maxWidth: "400px" }}>{description} </p>
         </div>
     )
 }
