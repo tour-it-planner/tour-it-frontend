@@ -59,7 +59,7 @@ function ItineraryDetailsPage() {
               <p> No destination selected for this itinerary.</p>
             )}
           </div>
-            <p>Created on: {formattedCreatedAt}</p>
+            <p className="Created">Created on: {formattedCreatedAt}</p>
         </>
       )}
 
