@@ -44,23 +44,17 @@ input[type="text"]:focus, input[type="link"]:focus {
     box-shadow: 0 0 10px rgba(0, 114, 255, 0.2);
 }
 
-button[type="submit"], .button-action {
-    background-color: #00c6ff;
-    color: white;
-    padding: 12px 20px;
-    font-size: 16px;
-    border: none;
-    border-radius: 25px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-}
-
-button[type="submit"]:hover, .button-action:hover {
+  
+  button:hover {
     background-color: #0072ff;
     transform: translateY(-5px);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-}
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+  }
+  
+  button:active {
+    transform: scale(0.98);
+  }
+  
 
 .button-remove {
     background-color: #ff5e62;
@@ -177,11 +171,6 @@ h4 {
     margin-bottom: 15px;
 }
 
-button[type="submit"] {
-    width: 100%;
-    max-width: 200px;
-    margin-top: 20px;
-}
 
 button[type="submit"]:hover {
     box-shadow: 0 10px 25px rgba(0, 114, 255, 0.2);
@@ -211,7 +200,6 @@ button[type="submit"]:active {
     margin-top: 10px;
     margin-right: 0;
     font-size: 14px;
-    font-weight: bold;
     letter-spacing: 1px;
     cursor: pointer;
     transition: background-color 0.3s ease, transform 0.3s ease;
@@ -220,4 +208,41 @@ button[type="submit"]:active {
     background-color: #c0392b !important; 
     transform: translateY(-3px);
   }
+ 
+  .Back {
+    background-color: #00c6ff;
+    color: white;
+    padding: 10px 13px;
+    font-size: 15px;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin-right: 10px;
+    margin-top: 2px;
+  }
+
+  .Update button[type="submit"] {
+    background-color: #00c6ff;
+    color: white;
+    padding: 10px 20px;
+    width: auto;
+    font-size: 15px;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin-right: 10px;
+    margin-top: 2px;
+  }
+  .button-container {
+    display: flex;
+    justify-content: flex-start; /* Aligns the buttons side by side */
+    gap: 10px; /* Optional: Adds space between the buttons */
+    margin-top: 20px; /* Optional: Adds space above the button container */
+}
+
+
  

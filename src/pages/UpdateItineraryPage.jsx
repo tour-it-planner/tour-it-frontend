@@ -212,13 +212,17 @@ function UpdateItineraryPage(props) {
                         }),
                     }}
                 />
-
+                <div class="button-container">
                 <Link to="/itineraries">
-                    <button>Back to Itineraries</button>
+                    <button className="Back">Back to Itineraries</button>
                 </Link>
-
-                <button type="submit">Update Itinerary</button>
+                    <div className="Update"> 
+                <button  type="submit">Update Itinerary</button>
+                </div>
+                </div>
             </form>
+
+            
 
             <button className="Delete" onClick={deleteItinerary}>Delete Itinerary</button>
         </div>
