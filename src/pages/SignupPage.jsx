@@ -16,7 +16,7 @@ const handlePassword = (e) => setPassword(e.target.value);
 const handleName = (e) => setName(e.target.value);
 
 const handleSignupSubmit = (e) => {
-    e. preventDefault();
+    e.preventDefault();
 
     const requestBody = { email, password, name };
 
