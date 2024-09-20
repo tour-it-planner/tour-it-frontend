@@ -204,11 +204,10 @@ nav.scrolled {
 
 .SignupPage, .LoginPage {
   background-color: #f9f9f9;
-  padding: 10vh;
-  max-width: 1200px;
+  padding: 60px;
   border-radius: 15px;
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
-  max-width: 350px;
+  max-width: 550px;
   width: 100%;
   margin: 50px auto 0;
   text-align: center;
@@ -236,12 +235,14 @@ nav.scrolled {
   display: flex;
   flex-direction:column;
   align-content: center;
+  gap: 2px !important;
 }
 
 /* Labels */
 .SignupPage label, .LoginPage label {
   text-align: left;
   margin-bottom: 5px;
+  margin-top: 15px;
   color: #34495e;
   font-weight: 600;
   font-size: 16px;
@@ -271,6 +272,7 @@ nav.scrolled {
 .SignupPage button, .LoginPage button {
   background-color: #3498db;
   color: white;
+  margin-bottom: 15px !important;
   border: none;
   padding: 15px 30px;
   border-radius: 10px;
@@ -278,6 +280,8 @@ nav.scrolled {
   cursor: pointer;
   font-weight: 600;
   transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  display: block;
+  margin: 0 auto;
 }
 
 /* Submit Button Hover */
