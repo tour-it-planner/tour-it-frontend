@@ -82,7 +82,7 @@ input[type="text"]:focus, input[type="link"]:focus {
 }
 
 .button-add:hover {
-    background-color: #5eff00;
+    background-color: #49f579;
 }
 
 /* Itinerary Form Fields Section */
@@ -238,10 +238,16 @@ button[type="submit"]:active {
   }
   .button-container {
     display: flex;
-    justify-content: flex-start; /* Aligns the buttons side by side */
-    gap: 10px; /* Optional: Adds space between the buttons */
-    margin-top: 20px; /* Optional: Adds space above the button container */
+    justify-content: flex-start; 
+    gap: 10px; 
+    margin-top: 20px; 
 }
+
+.Update button[type="submit"]:hover {
+    background-color: #0072ff;
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+  }
 
 
  
